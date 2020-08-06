@@ -3,8 +3,7 @@ package org.xpdojo.bank;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
+import static org.assertj.core.api.Java6Assertions.assertThat;
 
 public class AccountTest {
 
@@ -13,19 +12,19 @@ public class AccountTest {
     @Test
     @Ignore
     public void depositAnAmountToIncreaseTheBalance() {
-        assertThat("your first test isn't implemented", true, is(false));
+        assertThat(true). isEqualTo(false);
     }
 
     @Test
     public void newAccountShouldHaveZeroBalance(){
-        assertThat("Balance not 0", account.balance() == 0, is(true));
+        assertThat(account.balance()).isEqualTo(0);
     }
 
     @Test
     public void depositAnAmountShouldIncreaseTheBalance(){
         int preAmount = account.balance();
         account.deposit(2);
-        assertThat( "Balance not altered", account.balance() == preAmount + 2, is(true));
+        assertThat( account.balance()).isEqualTo( preAmount + 2);
     }
 
 
