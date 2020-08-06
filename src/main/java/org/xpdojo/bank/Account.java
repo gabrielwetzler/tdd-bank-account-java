@@ -1,8 +1,13 @@
 package org.xpdojo.bank;
 
 public class Account {
+    int amount = 0;
 
     public int balance(){
-        return -1;
+        return amount;
+    }
+
+    public void deposit(int i) {
+        amount += i;
     }
 }
