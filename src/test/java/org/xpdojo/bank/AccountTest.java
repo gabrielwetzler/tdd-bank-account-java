@@ -8,6 +8,8 @@ import static org.junit.Assert.assertThat;
 
 public class AccountTest {
 
+    private final Account account = new Account();;
+
     @Test
     @Ignore
     public void depositAnAmountToIncreaseTheBalance() {
@@ -16,17 +18,15 @@ public class AccountTest {
 
     @Test
     public void newAccountShouldHaveZeroBalance(){
-        Account account = new Account();
         assertThat("Balance not 0", account.balance() == 0, is(true));
     }
 
     @Test
     public void depositAnAmountShouldIncreaseTheBalance(){
-        Account account = new Account();
         int preAmount = account.balance();
         account.deposit(2);
         assertThat( "Balance not altered", account.balance() == preAmount + 2, is(true));
-
     }
-    
+
+
 }
